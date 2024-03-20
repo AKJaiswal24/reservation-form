@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,12 +12,12 @@
             <span class="message">Reservation</span>
         </header>
         <label> <span>Name</span>
-        <input name="Name" type="text" autocomplete="off" placeholder="eg.Shubham" class="input" required></label>
-        <label for=""><span>Purpose </span>
+        <input name="Name" autocomplete="off" type="text" placeholder="eg.Shubham" class="input" required></label>
+        <label for=""><span>pur </span>
             <input name="Purpose for Reservation" autocomplete="off" type="text" class="input" placeholder="eg.family dinner">
         </label>
         <label> <span>No of People</span>
-        <input name="No of People" autocomplete="off" type="number" placeholder="eg.2 or 4" class="input" required></label>
+        <input name="No of People" type="number" autocomplete="off" placeholder="eg.2 or 4" class="input" required></label>
         <fieldset>
             <div class="custom">
             <label class="sm"><span>Date</span></label>
@@ -32,6 +31,7 @@
         <div class="confirm">
             <button type="submit">Confirm the Reservation</button>
         </div>
+        <input type="hidden" name="_next" value="thanks.html">
         <input type="hidden" name="_captcha" value="false">
     </form>
 </body>
