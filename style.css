@@ -1,0 +1,154 @@
+:root{
+    --col1:#fff;
+    --col2:#252325;
+    --col3:#e8d5c4e6;
+    --col4:#683363;
+    --sc:#50505059;
+}
+.form{
+    background: var(--col4);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 20px var(--sc);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em 1em;
+    padding: 1em;
+    position: relative;
+    max-width: 75%;
+    max-height: 80px;
+    transition: background .3s ease-out, max-height .3s ease-out;
+    overflow: hidden;
+}
+
+.form::before{
+    content: "Reserve a table";
+    color: var(--col2);
+    font-size: 1.5em;
+    font-weight: 700;
+    display: grid;
+    width: 100%;
+    place-items: center;
+    position: absolute;
+    z-index: 1000;
+}
+.form::after{
+    content: "";
+    backdrop-filter: blur(6px) grayscale(100%);
+    background: linear-gradient(-180deg,#ffffff 0%, #ffffff80 70%, #ffffff4d 90%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
+
+.form::after,
+.form::before{
+    border-radius: 0 0 10px 10px;
+    pointer-events: none;
+    transition: all .5s ease-out;
+}
+
+.form:hover,
+.form:focus-within{
+    min-height: 400px;
+}
+.form:focus-within{
+    overflow: initial;
+}
+.form:hover:before,
+.form:hover::after{
+    opacity: 0;
+}
+.form header{
+    color: var(--col1);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+:is(.form) label span, label input{
+    flex: 1 10%;
+    transition: all .3s ease-in-out;
+}
+.form label{
+    display: flex;
+    flex-flow: row wrap;
+    color: var(--col1);
+    gap: .5em;
+}
+.custom{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.custom label{
+    margin-top: .7rem;
+}
+.custom label span{
+    font-size: 1rem;
+}
+.form input{
+    border-radius: 20px;
+    padding: 10px 5px;
+    max-width: 300px;
+    box-shadow:inset 3px 3px 1px var(--sc);
+}
+.form fieldset{
+    display: flex;
+    backdrop-filter: blur(10px);
+    flex-flow: row nowrap;
+    gap: 1em;
+    position: relative;
+    transition: all .3s ease-out;
+    z-index: 10;
+    border: 3px double var(--col1);
+    border-radius: 4px;
+}
+.form fieldset label{
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: .75em;
+}
+.form.day{
+    box-shadow: inset 3px 3px 1px var(--sc);
+    padding: 1em 1.75em 0.5em;
+    position: relative;
+}
+fieldset .custom span{
+    flex: 1 10%;
+}
+fieldset .custom input{
+    flex: 1 10%;
+    max-width: 100px;
+}
+.form button{
+    background: var(--col1);
+    color: var(--col1);
+    border: 2px solid var(--col1);
+    font-size: 1em;
+    font-weight: 700;
+    align-self: center;
+    padding: .5em 1.5em;
+}
+.confirm button{
+    color: var(--col2);
+    width: 100%;
+    text-align: center;
+}
+@media (max-width:430px){
+    .form fieldset{
+        flex-direction: column;
+    }
+    .form:hover,
+    .form:focus-within{
+        min-height: 450px;
+    }
+}
+@media (max-width:335px){
+.form:hover,
+.form:focus-within{
+    min-height: 525px;
+}
+}
